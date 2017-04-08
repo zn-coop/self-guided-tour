@@ -10,6 +10,7 @@ body {
 	border-style: solid;
 	border-width: 1px;
 	border-color: #000;
+    overflow: hidden;
 }
 
 .tour-stop{
@@ -29,7 +30,14 @@ body {
     background: gold;
 }
 
+.tour-stop img{
+    float: right;
+    margin: 0;
+    padding: 0;
+}
+
 .tour-stop-heading h1{
+    float: left;
     margin: 0;
     padding: 0;
 }
@@ -57,9 +65,4 @@ body {
 .tour-stop-footer p{
     margin: 0;
     padding: 0;
-}
-
-#button-holder{
-    margin: 0 auto;
-    text-align: center;
 }
