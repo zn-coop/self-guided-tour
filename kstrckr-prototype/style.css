@@ -5,6 +5,7 @@ html {
 body {
 	position: relative;
     color: #000;
+    background: gold;
 }
 
 .tour-stop{
@@ -31,10 +32,14 @@ body {
 
 .tour-stop-content{
     height: 0px;
-    padding: 0;
+    padding: 0px;
     margin: 0;
     background: white;
     overflow: hidden;
     
     transition: height .5s ease-in-out;
+}
+
+.tour-stop-content p{
+    margin: 6px 6px 20px 6px;
 }
