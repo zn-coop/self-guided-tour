@@ -1,12 +1,18 @@
-document.getElementsByClassName("info-button")[0].addEventListener("click", function(){
-    console.log(this.parentNode.parentNode);
-    if(this.parentNode.parentNode.dataset.status === "closed"){
-        this.parentNode.parentNode.style.height = "100%";
-        this.parentNode.parentNode.dataset.status = "open";
+const displayStopInfo = function(){
+    let targetInfo = this.parentNode.parentNode.children[1];
+    let targetInfoHeight = targetInfo.scrollHeight;
+    
+    if (targetInfo.dataset.status === "closed"){
+        targetInfo.style.height = targetInfoHeight + "px";
+        targetInfo.dataset.status = "open";
         this.setAttribute("src", "icons/close-icon.jpg");
-    } else if (this.parentNode.parentNode.dataset.status === "open"){
-        this.parentNode.parentNode.style.height = "19%";
-        this.parentNode.parentNode.dataset.status = "closed"
+    } else {
+        targetInfo.style.height = "0px";
+        targetInfo.dataset.status = "closed";
         this.setAttribute("src", "icons/info-icon.jpg");
     }
-})
+}
+
+document.getElementsByClassName("info-button")[0].addEventListener("click", displayStopInfo);
+
+document.getElementsByClassName("info-button")[1].addEventListener("click", displayStopInfo);
