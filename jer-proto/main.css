@@ -3,8 +3,9 @@
 }
 html,
 body {
-  margin: auto;
-  height: 100%
+  margin: 0 auto;
+  height: 100%;
+  width: 100%;
 }
 body {
   position: relative;
@@ -23,10 +24,9 @@ body {
   transition: all 0.5s ease;
   z-index: 0;
   overflow-y: auto;
-  overflow-x: wrap;
 }
 .img {
-  background:  linear-gradient(to top, purple, transparent 25%),
+  background:  linear-gradient(to top, purple, transparent 35%),
   url('http://splitsider.awlnetwork.com/wp-content/uploads/sites/2/2012/10/mst3k.jpg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -43,7 +43,7 @@ body {
   min-height: 50%;
   text-align: center;
   width: 100%;
-  padding: 15px;
+  padding: 20px;
   margin: 0;
   background: purple;
 }
@@ -59,13 +59,49 @@ body {
 .invisible {
   opacity: 0;
 }
+#next {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background: #bdfd80;
+  position: fixed;
+  border-radius: 100%;
+  top: 50%;
+  right: -25px;
+  z-index: 1;
+  height: 60px; 
+  width: 50px;
+  opacity: 0.8;
+}
+#next:before {
+  content: '>';
+  padding: 10px;
+}
+#prev {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  background: #bdfd80;
+  position: fixed;
+  border-radius: 100%;
+  top: 50%;
+  left: -25px;
+  z-index: 1;
+  height: 60px; 
+  width: 50px;
+  opacity: 0.8;
+}
+#prev:before {
+  content: '<';
+  padding: 10px;
+}
 #bottom-panel i {
   font-size: 12px;
 }
 #bottom-panel {
   text-align: center;
   font-family: 'Roboto','sans-serif';
-  line-height: 50px;
+  line-height: 35px;
   height: 50%;
   width: 100%;
   overflow: auto;
@@ -91,4 +127,10 @@ table.adp-placemark {
 span.foot {
   position: fixed;
   bottom: 0;
+}
+@media (max-width: 700px) {
+  html,
+  body {
+    margin: 0;
+  }
 }
